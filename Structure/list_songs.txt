@@ -1,0 +1,51 @@
+[records:=50]
+Dire Straits;Love Over Gold;1984;rock;MusicBrainz
+Dire Straits;Expresso Love;1984;rock;MusicBrainz
+Dire Straits;Romeo and Juliet;1984;rock;MusicBrainz
+Dire Straits;Telegraph Road;1984;rock;MusicBrainz
+Dire Straits;Private Investigations;1984;rock;MusicBrainz
+Dire Straits;Tunnel of Love (intro: The Carousel Waltz);1984;rock;MusicBrainz
+Dire Straits;Once Upon a Time in the West;1984;rock;MusicBrainz
+Dire Straits;Going Home (theme from ‘Local Hero’);1984;rock;MusicBrainz
+Ry Cooder;634-5789 (Soulsville, U.S.A.);1980;rock;MusicBrainz
+Rush;The Body Electric;1984;rock;MusicBrainz
+Rush;Afterimage;1984;rock;MusicBrainz
+Rush;Kid Gloves;1984;rock;MusicBrainz
+Rush;Red Lenses;1984;rock;MusicBrainz
+Rush;Red Sector A;1984;rock;MusicBrainz
+Rush;Between the Wheels;1984;rock;MusicBrainz
+Barclay James Harvest;Say You’ll Stay;1984;rock;MusicBrainz
+Dire Straits;Solid Rock;1984;rock;MusicBrainz
+King Crimson;Model Man;1984;rock;MusicBrainz
+King Crimson;No Warning;1984;rock;MusicBrainz
+Queen;Tie Your Mother Down;1977;rock;MusicBrainz
+The Long Ryders;(Sweet) Mental Revenge;1984;rock;MusicBrainz
+Ry Cooder;Crazy ’bout an Automobile (Every Woman I Know);1980;rock;MusicBrainz
+Hawkwind;Jack of Shadows;1979;rock;MusicBrainz
+Kauko Röyhkä & Narttu;Pähkinäpuu;1984;rock;MusicBrainz
+Kauko Röyhkä & Narttu;Tuulee;1984;rock;MusicBrainz
+Echo & The Bunnymen;Seven Seas "Life At Brian's - Lean And Hungry";1984;rock;Discogs
+Billy Squier;Signs Of Life;1984;rock;Discogs
+Paul McCartney;No More Lonely Nights;1984;rock;Discogs
+Body Checks;Tätowiert + Kahlgeschoren;1984;rock;Discogs
+Trust (2);Serre Les Poings;1984;rock;Discogs
+Mama's Boys;Mama's Boys;1984;rock;Discogs
+Def Leppard;High 'N' Dry;1984;rock;Discogs
+Savage Republic;Tragic Figure;1984;rock;Discogs
+The Icicle Works;The Icicle Works;1984;rock;Discogs
+Twisted Sister;We're Not Gonna Take It;1984;rock;Discogs
+The Pogues;The Boys From The County Hell;1984;rock;Discogs
+The Takeaways;Sweet And Sour Volume 2;1984;rock;Discogs
+Rick Springfield;Beautiful Feelings;1984;rock;Discogs
+Vice Squad;Teenage Rampage;1984;rock;Discogs
+The Vipers (4);Outta The Nest;1984;rock;Discogs
+Rolands Gosskör;Genom Barriären;1984;rock;Discogs
+Willie Loco Alexander*;Taxi-Stand Diane;1984;rock;Discogs
+Kansas (2);The Best Of Kansas;1984;rock;Discogs
+The Rolling Stones;30 Años De Musica Rock - Salvat;1984;rock;Discogs
+Lindisfarne;Nicely Out Of Tune;1984;rock;Discogs
+Andy Summers;2010 / To Hal And Back;1984;rock;Discogs
+The Beatles;I Feel Fine;1984;rock;Discogs
+Neil Diamond;Love Songs;1984;rock;Discogs
+The Sensational Alex Harvey Band;Live;1984;rock;Discogs
+Subterfuge (10);Who's The Fool;1984;rock;Discogs

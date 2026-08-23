@@ -1,0 +1,61 @@
+# ==========================================
+# Visual Studio & Local Artifacts
+# ==========================================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ==========================================
+# CMake Build Configurations
+# ==========================================
+out/
+build/
+CMakeSettings.json.user
+CMakeUserPresets.json
+
+# ==========================================
+# Compiled Binaries & Static Libraries
+# ==========================================
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.pdb
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+Thumbs.db
+
+# ==========================================
+# macOS System Files
+# ==========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ==========================================
+# VS Code (Extremely popular on Mac/Linux)
+# ==========================================
+.vscode/
+
+# ==========================================
+# CLion / JetBrains IDEs (Popular for cross-platform C++)
+# ==========================================
+.idea/
+cmake-build-*/
+
+# ==========================================
+# Apple Xcode & iOS Development 
+# ==========================================
+*.xcodeproj/
+*.xcworkspace/
+
+# ==========================================
+# 🤫 Instructor Secrets. 🤫
+# ==========================================
+deploy.ps1
