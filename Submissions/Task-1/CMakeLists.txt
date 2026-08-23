@@ -1,6 +1,6 @@
 # 1. Define the executable name
 # This is what the students will run (e.g., Task-4.exe)
-add_executable(Task-1 main.cpp )
+add_executable(Task-1 main.cpp Step-1.cpp Step-2.cpp GlobalCallbacks.cpp Step-3.cpp Step-4.cpp )
 
 # 2. Link the Common Library
 # This command connects the executable to your StructureReader code.
