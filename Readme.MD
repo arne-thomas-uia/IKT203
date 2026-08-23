@@ -86,9 +86,15 @@ Here is a quick example of how to read the names file the right way:
 #include "StructureReaderLib.h" // Wait, how does the compiler know where this is?! (CMake magic 🪄)
 
 // 1. Create your dedicated callback function
-bool OnNameDiscovered(const int index, const int total, const std::string& first, const std::string& last) {  
-
-    std::cout << "Processing record [" << index + 1 << "/" << total << "]: " << first << " " << last << "\n";
+bool OnNameDiscovered(const int index, const int total, const std::string& first, const std::string& last) {
+    
+    // Only print the first 5 records to prevent massive console spam! 😂
+    if (index < 5) {
+        std::cout << "Processing record [" << index + 1 << "/" << total << "]: " << first << " " << last << "\n";
+    }
+    else if (index == 5) {
+        std::cout << "...\n(Reading remaining 9,995 names silently to save your terminal!)\n...\n";
+    }
     
     // 🚀 YOUR MISSION HERE: 
     // 1. Create a new object on the heap (e.g., new TPerson(first, last))
@@ -96,7 +102,7 @@ bool OnNameDiscovered(const int index, const int total, const std::string& first
     
     // Return true to keep reading. Return false to abort early.
     return true; 
-}
+}  
 
 int main() {
     std::cout << "Initiating data sequence...\n";
