@@ -7,11 +7,13 @@ inline const std::string NameFilePath = std::string(STRUCTURE_DIR) + "/list_name
 inline const std::string SongFilePath = std::string(STRUCTURE_DIR) + "/list_songs.txt";
 inline const std::string GraphCityFilePath = std::string(STRUCTURE_DIR) + "/graph_city.txt";
 inline const std::string GraphNetworkFilePath = std::string(STRUCTURE_DIR) + "/graph_network.txt";
+inline const std::string GraphRpgFilePath = std::string(STRUCTURE_DIR) + "/graph_rpg.txt";
 
 // Helper functions for reading graphs.
 /*
 void readGraphCityFromFile(FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead);
 void readGraphNetworkFromFile(FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead);
+void readGraphRpgFromFile(FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead);
 */
 
 
