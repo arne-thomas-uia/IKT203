@@ -93,4 +93,16 @@ public:
   TVertex<T>* GetVertex(std::string aName) const {
     return _vertexMap.Search(aName);
   }
+
+  int GetVertexCount() const {
+    return _masterVertexList.GetSize();
+  }
+
+  TLinkedList<TEdge<T>*>& GetMasterEdgeList() {
+    return _masterEdgeList;
+  }
+
+  TLinkedList<TVertex<T>*>& GetMasterVertexList() {
+    return _masterVertexList;
+  }
 };

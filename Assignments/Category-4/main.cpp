@@ -57,10 +57,7 @@ int main(int argc, char* argv[])
 	// ******* IF YOU ADD ANYTHING ELSE, YOU WILL LOSE POINTS ON THE PORTFOLIO ASSIGNMENT! *******
 	// *******************************************************************************************
 	
-	for (int i = 0; i < 100; i++) {
-		// Test memory leaks by running the app 100 times in a loop
-		appStatus = RunApp(argc, argv);
-	}
+	appStatus = RunApp(argc, argv);
 
 	return appStatus;
 }

@@ -36,10 +36,10 @@ static constexpr std::string_view AssignmentName = "Category 3: Trees (BST, AVL 
 
 #if CATEGORY_3_OPTION == 1
 #include "Option-1/app.h"
-static constexpr std::string_view AssignmentOption = "Option 1 (Standard): Employee Directory (BST vs. AVL) 🌳";
+static constexpr std::string_view AssignmentOption = "Option 1 (Standard): Employee Directory (BST vs. AVL)";
 #elif CATEGORY_3_OPTION == 2
 #include "Option-2/app.h"
-static constexpr std::string_view AssignmentOption = "Option 2 (Advanced): Interpreted Calculator 🧮";
+static constexpr std::string_view AssignmentOption = "Option 2 (Advanced): Interpreted Calculator";
 #endif
 
 

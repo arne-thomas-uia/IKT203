@@ -17,8 +17,8 @@ if(MSVC)
     add_compile_options("/Zc:__cplusplus")
     # Enable multi-processor compilation for faster builds
     add_compile_options(/MP)
-    # Enable faster PDB generation for debugging
-    add_compile_options(/Zi /FS)
+    # Enable parallel PDB writes
+    add_compile_options(/FS)
     # Stops MSVC complaining about standard C functions like 'fopen' or 'strcpy'
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()

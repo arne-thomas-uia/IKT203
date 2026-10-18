@@ -2,8 +2,6 @@
 option(BUILD_CATEGORY_1_OPTION_1 "Build Assignment-Category 1 Option 1 (Standard)" ON)
 
 add_executable(Category-1
-    
-    
     main.cpp
 )
 
@@ -14,6 +12,11 @@ if(BUILD_CATEGORY_1_OPTION_1)
       PRIVATE
         "Option-1/app.cpp"
         "Option-1/app.h"
+        "Option-1/TAction.h"
+        "Option-1/TPrintJob.h"
+        "Option-1/TPrintJob.cpp"
+        "Option-1/TTextEditor.h"
+        "Option-1/TTextEditor.cpp"
     )
     target_compile_definitions(Category-1 PRIVATE "CATEGORY_1_OPTION=1")
 else()
@@ -22,6 +25,8 @@ else()
       PRIVATE
         "Option-2/app.cpp" 
         "Option-2/app.h"
+        "Option-2/TMusicPlayer.h"
+        "Option-2/TMusicPlayer.cpp"
     )
     target_compile_definitions(Category-1 PRIVATE "CATEGORY_1_OPTION=2")
 endif()
