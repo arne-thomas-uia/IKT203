@@ -1,0 +1,34 @@
+[NODES;records:=12]
+Austin Core
+Dallas Edge
+Denver Booster
+LA Booster
+Seattle Booster
+Miami Hub
+Chicago Relay
+NY Gateway
+Toronto Link
+Atlanta Node
+Vegas Proxy
+Phoenix Drop
+[EDGES;records:=20]
+Austin Core;Dallas Edge;10
+Austin Core;Denver Booster;40
+Austin Core;Chicago Relay;55
+Dallas Edge;Miami Hub;50
+Dallas Edge;Atlanta Node;25
+Denver Booster;Vegas Proxy;30
+Chicago Relay;NY Gateway;45
+Chicago Relay;Toronto Link;35
+NY Gateway;Toronto Link;20
+NY Gateway;Miami Hub;80
+Atlanta Node;Miami Hub;15
+Atlanta Node;Austin Core;40
+Vegas Proxy;LA Booster;10
+LA Booster;Seattle Booster;-60
+Seattle Booster;Phoenix Drop;20
+Phoenix Drop;Vegas Proxy;15
+LA Booster;Miami Hub;85
+Seattle Booster;Chicago Relay;75
+Phoenix Drop;Dallas Edge;60
+Toronto Link;Chicago Relay;30

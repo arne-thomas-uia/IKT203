@@ -19,7 +19,7 @@ add_library(StructureReader STATIC ${READER_SOURCES})
 # 'PUBLIC' means anyone who links to this library also gets these include paths.
 target_include_directories(StructureReader PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}           # For GetRecordCount.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/..        # For StructureReaderLib.h (one level up)
+    ${CMAKE_CURRENT_SOURCE_DIR}/..        # For StructureReader.h (one level up)
 )
 
 # 4. Compiler-Specific Flags

@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../StructureReaderLib.h"
+#include "../StructureReader.h"
 #include "GetRecordCount.h"
 #include "../DebugUtils.h"
 
@@ -14,7 +14,7 @@ enum class EParseState
 	EDGES
 };
 
-void readGraphFromFile(const std::string& aFilename, FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead)
+void ReadGraphFromFile(const std::string& aFilename, FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead)
 {
 	if (aFilename.empty()) {
 		debugText(Debug::ELevel::Error, "ReadGraph: Filename is empty!");
@@ -84,22 +84,28 @@ void readGraphFromFile(const std::string& aFilename, FNodeRead aOnNodeRead, FEdg
 				std::getline(edgeStream, toNode, ';') &&
 				std::getline(edgeStream, weightStr))
 			{
+				float weight = 0.0f;
+				bool parsed = true;
 				try
 				{
 					// Use std::stof (string to float) for weight
-					float weight = std::stof(weightStr);
-					if (aOnEdgeRead)
-					{
-						if (!aOnEdgeRead(currentIndex, totalCount, fromNode, toNode, weight))
-						{
-							keepReading = false;
-						}
-						currentIndex++;
-					}
+					weight = std::stof(weightStr);
 				}
 				catch (const std::exception&)
 				{
 					// Failed to parse float, skip this line
+					parsed = false;
+				}
+
+				// Called outside the try block so callback exceptions are not swallowed
+				if (parsed && aOnEdgeRead)
+				{
+					if (!aOnEdgeRead(currentIndex, totalCount, fromNode, toNode, weight))
+					{
+						debugText(Debug::ELevel::Warning, "ReadGraph: Edge reading halted by callback at index {}", currentIndex);
+						keepReading = false;
+					}
+					currentIndex++;
 				}
 			}
 			break;
@@ -110,18 +116,8 @@ void readGraphFromFile(const std::string& aFilename, FNodeRead aOnNodeRead, FEdg
 		}
 	}
 	file.close();
-	debugText(Debug::ELevel::Information, "ReadGraph: Successfully finished parsing graph.");
+	if (keepReading)
+	{
+		debugText(Debug::ELevel::Information, "ReadGraph: Successfully finished parsing graph.");
+	}
 }
-
-
-// Helper functions for reading graphs.
-
-/*
-void readGraphCityFromFile(FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead) {
-	readGraphFromFile(GraphCityFilePath, aOnNodeRead, aOnEdgeRead);
-}
-
-void readGraphNetworkFromFile(FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead) {
-	readGraphFromFile(GraphNetworkFilePath, aOnNodeRead, aOnEdgeRead);
-}
-*/

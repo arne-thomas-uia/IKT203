@@ -8,6 +8,9 @@ inline const std::string SongFilePath = std::string(STRUCTURE_DIR) + "/list_song
 inline const std::string GraphCityFilePath = std::string(STRUCTURE_DIR) + "/graph_city.txt";
 inline const std::string GraphNetworkFilePath = std::string(STRUCTURE_DIR) + "/graph_network.txt";
 inline const std::string GraphRpgFilePath = std::string(STRUCTURE_DIR) + "/graph_rpg.txt";
+inline const std::string GraphEsportArenasFilePath = std::string(STRUCTURE_DIR) + "/graph_esport_arenas.txt";
+inline const std::string GraphEsportBoostersFilePath = std::string(STRUCTURE_DIR) + "/graph_esport_boosters.txt";
+inline const std::string GraphEsportGlobalFilePath = std::string(STRUCTURE_DIR) + "/graph_esport_global.txt";
 
 // Helper functions for reading graphs.
 /*
@@ -31,22 +34,23 @@ using FNameRead = std::function<bool(const int aIndex, const int aTotalCount, co
 /// <summary>
 /// Use this function to read names from a specified file and process them using a callback function.
 /// </summary>
-///	<function>readNamesFromFile</function>
+///	<function>ReadNamesFromFile</function>
 ///	<description>Reads names from a specified file and invokes a callback for each name read.</description>
 /// <param name="aFilename">The path to the file containing names.</param>
 /// <param name="aOnNameRead">A callback function that is called for each name read. It takes two parameters: firstName and lastName. If the callback returns false, the reading process stops.</param>
 /// <param name="firstName">The first name read from the file.</param>
 /// <param name="lastName">The last name read from the file.</param>
 /// <returns>None.</returns>
-void readNamesFromFile(FNameRead aOnNameRead);
+void ReadNamesFromFile(FNameRead aOnNameRead);
+
 
 /// <summary>
 /// Template overload to allow passing member functions directly.
 /// </summary>
 template <typename TObject>
-void readNamesFromFile(TObject* instance, bool (TObject::*method)(const int, const int, const std::string&, const std::string&))
+void ReadNamesFromFile(TObject* instance, bool (TObject::*method)(const int, const int, const std::string&, const std::string&))
 {
-    readNamesFromFile([instance, method](const int index, const int total, const std::string& first, const std::string& last) {
+    ReadNamesFromFile([instance, method](const int index, const int total, const std::string& first, const std::string& last) {
         return (instance->*method)(index, total, first, last);
     });
 }
@@ -76,7 +80,7 @@ using FEdgeRead = std::function<bool(const int aIndex, const int aTotalCount, co
 /// </summary>
 /// Use this function to read a graph from a specified file and process its nodes and edges using callback functions.
 /// </summary>
-/// <function>readGraphFromFile</function>
+/// <function>ReadGraphFromFile</function>
 /// <description>
 /// Reads a graph from a specified file and invokes callbacks for each node and edge read.
 /// All nodes are read first, followed by edges.
@@ -84,26 +88,17 @@ using FEdgeRead = std::function<bool(const int aIndex, const int aTotalCount, co
 /// <param name="aFilename">The path to the file containing the graph data.</param>
 /// <param name="aOnNodeRead">A callback function that is called for each node read. It takes one parameter: the node std::string. If the callback returns false, the reading process stops.</param>
 /// <param name="aOnEdgeRead">A callback function that is called for each edge read. It takes three parameters: the fromNode std::string, the toNode std::string, and the weight float. If the callback returns false, the reading process stops.</param>
-void readGraphFromFile(const std::string& aFilename, FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead);
+void ReadGraphFromFile(const std::string& aFilename, FNodeRead aOnNodeRead, FEdgeRead aOnEdgeRead);
 
 /// <summary>
-/// Template overload for readGraphFromFile to allow member functions.
+/// Template overload for ReadGraphFromFile to allow member functions.
 /// </summary>
-template <typename TObject1, typename TObject2>
-void readGraphFromFile(
-    const std::string& aFilename, 
-    TObject1* instanceNode, bool (TObject1::*methodNode)(const int, const int, const std::string&),
-    TObject2* instanceEdge, bool (TObject2::*methodEdge)(const int, const int, const std::string&, const std::string&, float))
+template <typename TNode, typename TEdge>
+void ReadGraphFromFile(const std::string& aFilename, TNode&& aOnNodeRead, TEdge&& aOnEdgeRead)
 {
-    FNodeRead nodeRead = [instanceNode, methodNode](const int index, const int total, const std::string& node) {
-        return (instanceNode->*methodNode)(index, total, node);
-    };
-
-    FEdgeRead edgeRead = [instanceEdge, methodEdge](const int index, const int total, const std::string& from, const std::string& to, float weight) {
-        return (instanceEdge->*methodEdge)(index, total, from, to, weight);
-    };
-
-    readGraphFromFile(aFilename, nodeRead, edgeRead);
+  ReadGraphFromFile(aFilename,
+    FNodeRead(std::forward<TNode>(aOnNodeRead)),
+    FEdgeRead(std::forward<TEdge>(aOnEdgeRead)));
 }
 
 

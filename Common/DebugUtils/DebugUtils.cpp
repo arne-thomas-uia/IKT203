@@ -1,8 +1,10 @@
-#include "../DebugUtils.h"
+#include "DebugUtils.hpp"
+
+#include <iostream>
 
 #ifdef _WIN32
 #include <windows.h>
-// Static block to initialize Windows Console colors immediately
+
 namespace {
   struct WindowsColorInitializer {
     WindowsColorInitializer() {
@@ -10,7 +12,7 @@ namespace {
       if (hOut != INVALID_HANDLE_VALUE) {
         DWORD dwMode = 0;
         if (GetConsoleMode(hOut, &dwMode)) {
-          dwMode |= 0x0004; // ENABLE_VIRTUAL_TERMINAL_PROCESSING
+          dwMode |= 0x0004;
           SetConsoleMode(hOut, dwMode);
         }
       }
@@ -28,13 +30,20 @@ namespace Debug {
     return threshold;
   }
 
+  void TLogger::Write(ELevel aLevel, std::string_view aMessage) {
+    std::cout << GetColorCode(aLevel)
+              << "[" << GetLevelName(aLevel) << "] "
+              << aMessage
+              << "\033[0m" << std::endl;
+  }
+
   const char* TLogger::GetColorCode(ELevel aLevel) {
     switch (aLevel) {
-    case ELevel::Error:       return "\033[31m"; // Red
-    case ELevel::Warning:     return "\033[33m"; // Yellow
-    case ELevel::Information: return "\033[36m"; // Cyan
-    case ELevel::Verbose:     return "\033[37m"; // White
-    default:                 return "\033[0m";
+    case ELevel::Error:       return "\033[31m";
+    case ELevel::Warning:     return "\033[33m";
+    case ELevel::Information: return "\033[36m";
+    case ELevel::Verbose:     return "\033[37m";
+    default:                  return "\033[0m";
     }
   }
 
@@ -44,7 +53,7 @@ namespace Debug {
     case ELevel::Warning:     return "W";
     case ELevel::Information: return "i";
     case ELevel::Verbose:     return "v";
-    default:                 return " ";
+    default:                  return " ";
     }
   }
 }

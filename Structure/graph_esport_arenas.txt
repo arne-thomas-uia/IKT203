@@ -1,0 +1,46 @@
+[NODES;records:=16]
+Main Stage
+Alpha Arena
+Beta Arena
+Gamma Arena
+Delta Stage
+Production Truck A
+Production Truck B
+Shuttle Comms
+Press Briefing Room
+VIP Lounge
+Observer Hub
+Caster Desk 1
+Caster Desk 2
+Pyrotechnics Control
+Server Rack A
+Server Rack B
+[EDGES;records:=28]
+Main Stage;Alpha Arena;45
+Main Stage;Production Truck A;80
+Main Stage;Beta Arena;50
+Main Stage;Pyrotechnics Control;15
+Alpha Arena;Gamma Arena;30
+Alpha Arena;Delta Stage;25
+Alpha Arena;Shuttle Comms;70
+Production Truck A;Gamma Arena;20
+Production Truck A;Production Truck B;60
+Production Truck A;Server Rack A;45
+Beta Arena;Delta Stage;40
+Beta Arena;VIP Lounge;35
+VIP Lounge;Observer Hub;90
+VIP Lounge;Press Briefing Room;55
+Gamma Arena;Press Briefing Room;50
+Gamma Arena;Caster Desk 1;25
+Production Truck B;Press Briefing Room;40
+Production Truck B;Server Rack B;50
+Delta Stage;Shuttle Comms;30
+Shuttle Comms;Observer Hub;80
+Press Briefing Room;Observer Hub;70
+Caster Desk 1;Caster Desk 2;10
+Caster Desk 2;Observer Hub;35
+Pyrotechnics Control;Production Truck A;65
+Server Rack A;Server Rack B;15
+Server Rack A;Main Stage;120
+Server Rack B;Observer Hub;110
+Beta Arena;Caster Desk 2;85
