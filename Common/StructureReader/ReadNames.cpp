@@ -2,12 +2,12 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../StructureReaderLib.h"
+#include "../StructureReader.h"
 #include "GetRecordCount.h"
 #include "../DebugUtils.h"
 
 
-void readNamesFromFile(FNameRead aOnNameRead)
+void ReadNamesFromFile(FNameRead aOnNameRead)
 {
 	if (NameFilePath.empty()) {
 		debugText(Debug::ELevel::Error, "ReadNames: Filename is empty!");

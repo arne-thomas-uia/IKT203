@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "DataStructureLib.h"
+#include "DataStructure.h"
 #include "Movie.h"
 
 namespace Task1 {

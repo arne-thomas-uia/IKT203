@@ -24,9 +24,10 @@ else()
     target_compile_definitions(Category-3 PRIVATE "CATEGORY_3_OPTION=2")
 endif()
 
-target_link_libraries(Category-3 PRIVATE StructureReader)
-target_link_libraries(Category-3 PUBLIC DebugUtils)
-
+target_link_libraries(Category-1 PRIVATE StructureReader)
+target_link_libraries(Category-1 PUBLIC DebugUtils)
+target_link_libraries(Category-1 PUBLIC DataStructure)
+target_link_libraries(Category-1 PUBLIC MiscUtils)
 
 add_custom_command(TARGET Category-3 POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E echo "Category-3 post-build step, add any additional commands here if needed..."

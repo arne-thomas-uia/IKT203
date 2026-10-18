@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../StructureReaderLib.h"
+#include "../StructureReader.h"
 #include "GetRecordCount.h"
 #include "../DebugUtils.h"
 

@@ -8,7 +8,7 @@ add_executable(Task-6
 # 2. Link the Common Library
 # This command connects the executable to your StructureReader code.
 # Because we used 'PUBLIC' in the reader's setup, Task-6 
-# automatically knows where to find "StructureReaderLib.h".
+# automatically knows where to find "StructureReader.h".
 target_link_libraries(Task-6 PRIVATE StructureReader)
 
 # 3. Handle the Data Files (The "Structure" folder)

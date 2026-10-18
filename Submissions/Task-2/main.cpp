@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <string>
 
-#include "StructureReaderLib.h"
-#include "DataStructureLib.h"
+#include "StructureReader.h"
+#include "DataStructure.h"
 #include "DebugUtils.h"
 #include "Movie.h"
 #include "Menu.h"

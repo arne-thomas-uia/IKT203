@@ -1,0 +1,61 @@
+[NODES;records:=15]
+Seoul Hub
+Tokyo Edge
+LosAngeles Host
+Frankfurt PoP
+Sydney Branch
+Singapore Hub
+London Edge
+Stockholm PoP
+SaoPaulo Hub
+CapeTown Relay
+Dubai Gateway
+Mumbai Link
+Paris Node
+Ashburn Core
+SanJose Edge
+[EDGES;records:=44]
+Seoul Hub;Tokyo Edge;30
+Tokyo Edge;Seoul Hub;32
+Seoul Hub;SanJose Edge;135
+SanJose Edge;Seoul Hub;140
+SanJose Edge;LosAngeles Host;15
+LosAngeles Host;SanJose Edge;12
+Seoul Hub;Sydney Branch;95
+Sydney Branch;Seoul Hub;98
+Tokyo Edge;Sydney Branch;110
+Sydney Branch;Tokyo Edge;105
+Tokyo Edge;Singapore Hub;75
+Singapore Hub;Tokyo Edge;72
+Singapore Hub;Mumbai Link;45
+Mumbai Link;Singapore Hub;48
+Mumbai Link;Dubai Gateway;35
+Dubai Gateway;Mumbai Link;38
+Dubai Gateway;Frankfurt PoP;90
+Frankfurt PoP;Dubai Gateway;92
+Singapore Hub;Frankfurt PoP;160
+Frankfurt PoP;Singapore Hub;165
+Frankfurt PoP;Tokyo Edge;210
+Tokyo Edge;Frankfurt PoP;205
+Sydney Branch;Singapore Hub;85
+Singapore Hub;Sydney Branch;82
+Singapore Hub;Seoul Hub;65
+Seoul Hub;Singapore Hub;68
+Singapore Hub;London Edge;180
+London Edge;Singapore Hub;185
+London Edge;Paris Node;18
+Paris Node;London Edge;19
+Paris Node;Frankfurt PoP;22
+Frankfurt PoP;Paris Node;21
+London Edge;Stockholm PoP;35
+Stockholm PoP;London Edge;32
+Frankfurt PoP;SaoPaulo Hub;190
+SaoPaulo Hub;Frankfurt PoP;195
+SaoPaulo Hub;LosAngeles Host;115
+LosAngeles Host;SaoPaulo Hub;110
+SaoPaulo Hub;CapeTown Relay;150
+CapeTown Relay;SaoPaulo Hub;155
+CapeTown Relay;Dubai Gateway;120
+Dubai Gateway;CapeTown Relay;125
+Ashburn Core;London Edge;85
+London Edge;Ashburn Core;88

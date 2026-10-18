@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.28)
 
 # Define the project name and enable the C++ language (CXX).
-project(IKT203_Algorithms_DataStructureLib LANGUAGES CXX)
+project(IKT203_Algorithms_DataStructure LANGUAGES CXX)
 
 # Enforce C++23 globally.
 # Because we set this here, CMake AUTOMATICALLY adds /std:c++latest for MSVC 

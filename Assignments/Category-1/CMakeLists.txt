@@ -28,6 +28,9 @@ endif()
 
 target_link_libraries(Category-1 PRIVATE StructureReader)
 target_link_libraries(Category-1 PUBLIC DebugUtils)
+target_link_libraries(Category-1 PUBLIC DataStructure)
+target_link_libraries(Category-1 PUBLIC MiscUtils)
+
 
 
 add_custom_command(TARGET Category-1 POST_BUILD

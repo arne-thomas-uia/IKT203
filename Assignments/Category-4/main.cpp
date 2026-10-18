@@ -32,14 +32,14 @@ To force an update (e.g., in Visual Studio):
 #include <iostream>
 #include <string_view>
 
-static constexpr std::string_view AssignmentName = "Category 4: Graphs & Dijkstra's Algorithm";
+static constexpr std::string_view AssignmentName = "Category 4: Graphs & Prim's, Dijkstra's amd Bellman-Ford Algorithm";
 
 #if CATEGORY_4_OPTION == 1
 #include "Option-1/app.h"
-static constexpr std::string_view AssignmentOption = "Option 1 (Standard): Data Center Network Monitor 🖥️";
+static constexpr std::string_view AssignmentOption = "Option 1 (Standard): Physical Fiber Layout (Prim's Algorithm)\r\n Optional Bellman-Ford Algorithm.";
 #elif CATEGORY_4_OPTION == 2
 #include "Option-2/app.h"
-static constexpr std::string_view AssignmentOption = "Option 2 (Advanced): Inter-city Logistics Router 🚚";
+static constexpr std::string_view AssignmentOption = "Option 2 (Advanced): Global Broadcast Multicast Router (Dijkstra's)\r\n Optional Bellman-Ford Algorithm.";
 #endif
 
 
@@ -57,5 +57,10 @@ int main(int argc, char* argv[])
 	// ******* IF YOU ADD ANYTHING ELSE, YOU WILL LOSE POINTS ON THE PORTFOLIO ASSIGNMENT! *******
 	// *******************************************************************************************
 	
-	return RunApp(argc, argv);
+	for (int i = 0; i < 100; i++) {
+		// Test memory leaks by running the app 100 times in a loop
+		appStatus = RunApp(argc, argv);
+	}
+
+	return appStatus;
 }
