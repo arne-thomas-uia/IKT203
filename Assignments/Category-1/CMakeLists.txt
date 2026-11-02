@@ -1,7 +1,8 @@
 # "ON" = build Option 1, "OFF" = build Option 2.
-option(BUILD_CATEGORY_1_OPTION_1 "Build Assignment-Category 1 Option 1 (Standard)" ON)
+option(BUILD_CATEGORY_1_OPTION_1 "Build Assignment-Category 1 Option 1 (Standard)" OFF)
 
 add_executable(Category-1
+    
     main.cpp
 )
 

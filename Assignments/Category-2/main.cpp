@@ -51,11 +51,13 @@ int main(int argc, char* argv[])
 
 	// Create only core or common code in main.cpp
 	// Use the option header files to implement the specific assignment option logic
-	
+
 	// *******************************************************************************************
 	// *******     DO NOT ADD ANYTHING TO THIS MAIN FUNCTION EXCEPT CALLING RunApp()       *******
 	// ******* IF YOU ADD ANYTHING ELSE, YOU WILL LOSE POINTS ON THE PORTFOLIO ASSIGNMENT! *******
 	// *******************************************************************************************
-	
-	return RunApp(argc, argv);
+
+	appStatus = RunApp(argc, argv);
+
+	return appStatus;
 }

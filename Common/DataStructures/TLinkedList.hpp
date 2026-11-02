@@ -1,10 +1,10 @@
 #pragma once
-#include <stdexcept> // For std::runtime_error
-#include <string>    // For std::to_string
-#include <functional> // For std::function
 #include "../DebugUtils.h"
 #include "TCollection.hpp"
 #include "TNode.hpp"
+#include <functional> // For std::function
+#include <stdexcept> // For std::runtime_error
+#include <string>    // For std::to_string
 
 
 // Type defined function for data factory
