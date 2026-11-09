@@ -3,9 +3,8 @@
 #include "StructureReader.h"
 #include "TPerson.h"
 #include <cstdlib> // For rand()
-#include <DataStructures/TAlgorithm.hpp>
-#include <DataStructures/TLinkedList.hpp>
-#include <DebugUtils/DebugUtils.hpp>
+#include "DataStructure.h"
+#include "DebugUtils.h"
 #include <format>
 #include <iostream>
 #include <string>

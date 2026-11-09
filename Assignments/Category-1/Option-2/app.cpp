@@ -1,12 +1,12 @@
 // Option 2 (Advanced): Console Music Player.
 
-#include <iostream>
-#include <string>
-#include <format>
-#include "StructureReader.h"
 #include "DebugUtils.h"
 #include "song.h"
+#include "StructureReader.h"
 #include "TMusicPlayer.h"
+#include <format>
+#include <iostream>
+#include <string>
 
 // Note: Using a wrapper struct/functor for the callback to inject the player instance cleanly
 struct TSongReader {
@@ -37,7 +37,7 @@ int RunApp(int /*argc*/, char* /*argv*/[]) {
 	// Ensure you use the exact function signature for your StructureReader
 	// e.g., ReadSongsFromFile(ListSongsFilePath, reader);
 	Debug::LogInfo("Loading songs from file...");
-	ReadSongsFromFile(reader); 
+	ReadSongsFromFile(reader);
 
 	TLinkedList<TSong*>* library = player.GetLibrary();
 	int librarySize = library->GetSize();

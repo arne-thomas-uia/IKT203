@@ -1,12 +1,12 @@
 // Option 2 (Advanced): Console Music Player.
 
-#include "menu.h"
 #include "DataStructure.h"
-#include "TVariable.h"
+#include "DebugUtils.h"
+#include "menu.h"
+#include "TExpressionNode.h"
 #include "TLexer.h"
 #include "TParser.h"
-#include "TExpressionNode.h"
-#include "DebugUtils.h"
+#include "TVariable.h"
 #include <iostream>
 #include <sstream>
 
@@ -22,9 +22,9 @@ int RunApp(int /*argc*/, char* /*argv*/[]) {
 	TAVLTree<TVariable*>* symbolTable = new TAVLTree<TVariable*>(compareVariables, true);
 
 	TMenu::PrintHeader("IKT203 - Category 3: Interpreted Calculator");
-	TMenu::PrintCalculatorInstructions();
 
 	while (true) {
+		TMenu::PrintCalculatorInstructions();
 		std::string input = TMenu::ReadString("calc>");
 
 		// Trim or check exit
@@ -40,6 +40,8 @@ int RunApp(int /*argc*/, char* /*argv*/[]) {
 			symbolTable->TraverseInOrder([](TVariable* var) {
 				std::cout << "  " << var->Name << " = " << var->Value << std::endl;
 				});
+			TMenu::WaitForAnyKey("Press any key to continue...");
+			TMenu::ClearScreen();
 			continue;
 		}
 
@@ -54,6 +56,8 @@ int RunApp(int /*argc*/, char* /*argv*/[]) {
 				size_t eqPos = assignStr.find('=');
 				if (eqPos == std::string::npos) {
 					TMenu::PrintError("Invalid assignment syntax. Use 'set x = 10' or 'x = 10'.");
+					TMenu::WaitForAnyKey("Press any key to continue...");
+					TMenu::ClearScreen();
 					continue;
 				}
 
@@ -89,6 +93,8 @@ int RunApp(int /*argc*/, char* /*argv*/[]) {
 			catch (const std::exception& e) {
 				TMenu::PrintError(e.what());
 			}
+			TMenu::WaitForAnyKey("Press any key to continue...");
+			TMenu::ClearScreen();
 			continue;
 		}
 
@@ -108,9 +114,13 @@ int RunApp(int /*argc*/, char* /*argv*/[]) {
 			delete ast; // Clean up AST
 
 			TMenu::PrintSuccess("Result = " + std::to_string(result));
+			TMenu::WaitForAnyKey("Press any key to continue...");
+			TMenu::ClearScreen();
 		}
 		catch (const std::exception& e) {
 			TMenu::PrintError(e.what());
+			TMenu::WaitForAnyKey("Press any key to continue...");
+			TMenu::ClearScreen();
 		}
 	}
 
